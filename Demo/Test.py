@@ -91,7 +91,7 @@ class Example(wx.Frame):
 
         sizer = wx.GridBagSizer(5, 5)
 
-        text1 = wx.StaticText(panel, label="Java Class")
+        text1 = wx.StaticText(panel, label="Java Class ")
         sizer.Add(text1, pos=(0, 0), flag=wx.TOP | wx.LEFT | wx.BOTTOM,
                   border=15)
 
@@ -105,7 +105,7 @@ class Example(wx.Frame):
         sizer.Add(line, pos=(1, 0), span=(1, 5),
                   flag=wx.EXPAND | wx.BOTTOM, border=30)
 
-        text2 = wx.StaticText(panel, label="Name")
+        text2 = wx.StaticText(panel, label=" Name ")
         sizer.Add(text2, pos=(2, 0), flag=wx.LEFT, border=10)
 
         tc1 = wx.TextCtrl(panel)
@@ -163,12 +163,12 @@ class Example(wx.Frame):
         panel.SetSizer(sizer)
 
     def on_combobox(self, event):
-        wx.ProgressDialog("title", "message", maximum=5).ShowModal()
-        # print("选择{0}".format(event.GetString()))
+        # wx.ProgressDialog("title", "message", maximum=5).ShowModal()
+        print("选择{0}".format(event.GetString()))
 
 if __name__ == '__main__':
     app = wx.App()
-    Example(None, title="Create Java Class")
+    Example(None, title="Creates")
     app.MainLoop()
 
 # class MyForm(wx.Frame):
