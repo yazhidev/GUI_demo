@@ -15,7 +15,7 @@ class Example(wx.Frame):
         container_hor = wx.BoxSizer(wx.HORIZONTAL)
         container_ver = wx.BoxSizer(wx.VERTICAL)
         container_ver.Add(self.buildTestInfo(panel), flag=wx.ALL, border=10)
-        container_ver.Add(self.buildSteps(panel), flag=wx.LEFT | wx.RIGHT, border=10)
+        container_ver.Add(self.buildSteps(panel), flag=wx.LEFT | wx.RIGHT | wx.EXPAND, border=10)
         # 复制内容按钮
         finish_btn = wx.Button(panel, label='完成并复制内容')
         container_ver.Add(finish_btn, flag=wx.ALIGN_RIGHT | wx.RIGHT | wx.TOP, border=20)
