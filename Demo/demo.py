@@ -14,13 +14,15 @@ class Example(wx.Frame):
         # 一个垂直容器，一个水平容器
         container_hor = wx.BoxSizer(wx.HORIZONTAL)
         container_ver = wx.BoxSizer(wx.VERTICAL)
-        container_ver.Add(self.buildTestInfo(panel), flag=wx.ALL, border=10)
-        container_ver.Add(self.buildSteps(panel), flag=wx.LEFT | wx.RIGHT, border=10)
+        # 测试信息部分
+        container_ver.Add(self.buildTestInfo(panel), flag=wx.ALL | wx.EXPAND, border=10)
+        # 操作步骤部分
+        container_ver.Add(self.buildSteps(panel), flag=wx.LEFT | wx.RIGHT | wx.EXPAND, border=10)
         # 复制内容按钮
         finish_btn = wx.Button(panel, label='完成并复制内容')
-        container_ver.Add(finish_btn, flag=wx.ALIGN_RIGHT | wx.RIGHT | wx.TOP, border=20)
+        container_ver.Add(finish_btn, flag=wx.ALIGN_RIGHT | wx.RIGHT | wx.TOP, border=15)
         # 内容显示框
-        result_label = wx.TextCtrl(panel, style=wx.TE_MULTILINE, size=(580, 575))
+        result_label = wx.TextCtrl(panel, style=wx.TE_MULTILINE, size=(450, 575))
         container_hor.Add(container_ver, flag=wx.ALL, border=10)
         container_hor.Add(result_label, flag=wx.TOP | wx.RIGHT, border=35)
         panel.SetSizerAndFit(container_hor)
@@ -51,7 +53,7 @@ class Example(wx.Frame):
         grid_bag_sizer.Add(area, pos=(1, 3), span=(1, 1))
         # 添加事件处理
         self.Bind(wx.EVT_COMBOBOX, self.on_combobox, area)
-        account_and_pwd_input = wx.TextCtrl(panel, size=(200, 20))
+        account_and_pwd_input = wx.TextCtrl(panel, size=(150, 20))
         line2.Add(account_and_pwd, flag=wx.Top, border=3)
         line2.Add(area, flag=wx.LEFT, border=10)
         line2.Add(account_and_pwd_input, flag=wx.LEFT, border=10)
@@ -59,8 +61,8 @@ class Example(wx.Frame):
 
         line3 = wx.BoxSizer(wx.HORIZONTAL)
         test_mobile = wx.StaticText(panel, label="测试手机型号及版本: ")
-        test_mobile_input1 = wx.TextCtrl(panel, size=(150, 20))
-        test_mobile_input2 = wx.TextCtrl(panel, size=(150, 20))
+        test_mobile_input1 = wx.TextCtrl(panel, size=(130, 20))
+        test_mobile_input2 = wx.TextCtrl(panel, size=(130, 20))
         line3.Add(test_mobile, flag=wx.RIGHT, border=10)
         line3.Add(test_mobile_input1, flag=wx.RIGHT, border=10)
         line3.Add(test_mobile_input2)
